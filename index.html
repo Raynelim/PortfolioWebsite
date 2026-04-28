@@ -6,10 +6,7 @@
   <title>Rayne Lim — UI/UX Designer & Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
-
 <body>
-
 
   <nav>
     <a href="index.html" class="logo">Rayne Lim</a>
@@ -26,8 +23,7 @@
   <section class="hero">
     <div class="hero-content">
 
-      <span class="availability-badge">
-        <!-- Green dot --> Open to Internships &amp; Part-time Roles
+      <span class="availability-badge">Open to Internships &amp; Part-time Roles</span>
       </span>
 
       <h1>
@@ -115,12 +111,12 @@
 
   <section id="about" class="about">
 
-    <div class="about-image-placeholder">
+    <div class="about-image-placeholder"></div>
  
 
     <div class="about-content">
       <span class="section-label">About</span>
-      <h2>A designer who builds.</h2>
+      <h2>A designer <em>who builds.</em></h2>
 
 
       <p>
@@ -237,6 +233,19 @@
     <span>Designed &amp; built by Rayne</span>
   </footer>
 
-
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+  
 </body>
 </html>
