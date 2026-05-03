@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rayne Lim — About</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="transitions.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
@@ -30,56 +34,93 @@
     </div>
   </header>
 
-  <!-- ── INTRO — photo + bio ──────────────────────────── -->
-  <section class="about-pg-intro">
+  <!-- ── INTRO — Floating Identity + Editorial Bio ─────── -->
+  <section class="about-pg-intro" id="about-intro">
+
+    <!-- LEFT: Floating Identity Layer -->
     <div class="about-pg-photo-wrap">
-      <div class="about-pg-photo" aria-label="My photo">
+
+      <!-- Floating tag bubbles — parallax via JS -->
+      <span class="about-bubble about-bubble--1" data-speed="0.4">🇸🇬 Singapore Based</span>
+      <span class="about-bubble about-bubble--2" data-speed="0.7">☕ Coffee Fueled</span>
+      <span class="about-bubble about-bubble--3" data-speed="0.55">✈️ Travel Enthusiast</span>
+
+      <!-- Profile image with asymmetric radius + wipe reveal -->
+      <div class="about-pg-photo about-pg-photo--reveal" aria-label="My photo" id="aboutPhoto">
         <!-- Replace with: <img src="your-photo.jpg" alt="Rayne Lim" /> -->
       </div>
-      <!-- Small floating detail card -->
-      <div class="about-pg-photo-card">
-        <span class="about-pg-photo-card-label">Based in</span>
-        <span class="about-pg-photo-card-value">Singapore 🇸🇬</span>
-      </div>
+
     </div>
 
-    <div class="about-pg-bio">
-      <h2>Hi, I'm Rayne.</h2>
-      <p>
-        I'm a Year 3 student at Ngee Ann Polytechnic studying [my course].
-        I design and build digital products — mostly mobile apps — with a
-        focus on making experiences that feel intuitive and look intentional.
-      </p>
-      <p>
-        What sets me apart is that I don't just design — I build too. I can
-        take a product from a Figma frame to a working app, which means I
-        think about implementation while I design and about design while I
-        build. That cross-discipline perspective shapes everything I make.
-      </p>
-      <p>
-        I'm currently looking for a UI/UX internship or part-time role where
-        I can contribute to a real product, learn from a team, and grow fast.
-      </p>
+    <!-- RIGHT: Editorial Bio -->
+    <div class="about-pg-bio" id="aboutBio">
 
-      <!-- Currently table -->
-      <div class="currently">
-        <div class="currently-item">
-          <span class="currently-label">Currently</span>
-          <span class="currently-value">Building Form — my personal transformation iOS app</span>
-        </div>
-        <div class="currently-item">
-          <span class="currently-label">Learning</span>
-          <span class="currently-value">[What I'm currently learning]</span>
-        </div>
-        <div class="currently-item">
-          <span class="currently-label">Looking for</span>
-          <span class="currently-value">A UI/UX design internship or part-time role</span>
-        </div>
-        <div class="currently-item">
-          <span class="currently-label">Based in</span>
-          <span class="currently-value">Singapore</span>
-        </div>
+      <!-- Drop-cap paragraph: The Philosophy -->
+      <div class="about-bio-part">
+        <span class="about-bio-part-label">The Philosophy</span>
+        <p class="about-bio-dropcap">
+          I believe the best design is invisible. It doesn't ask for attention —
+          it just works. I design for the half-second it takes someone to figure
+          out where to tap, the moment friction disappears, and the product
+          feels like it was built for exactly them.
+        </p>
       </div>
+
+      <!-- The Toolkit -->
+      <div class="about-bio-part">
+        <span class="about-bio-part-label">The Toolkit</span>
+        <p>
+          I'm a Year 3 student at Ngee Ann Polytechnic studying [my course].
+          What sets me apart is that I don't just design — I build too.
+          Figma to React Native. Wireframe to working app. That cross-discipline
+          perspective means I think about implementation while designing and
+          about design while building.
+        </p>
+      </div>
+
+      <!-- The Goal -->
+      <div class="about-bio-part">
+        <span class="about-bio-part-label">The Goal</span>
+        <p>
+          I'm actively looking for a UI/UX internship or part-time role —
+          ideally with a team building products that reach people globally.
+          I want to contribute to something real, learn fast, and grow
+          alongside people who care deeply about craft.
+        </p>
+      </div>
+
+      <!-- Currently — glassmorphism 3-col grid -->
+      <div class="about-currently-grid">
+
+        <div class="about-currently-card">
+          <div class="about-currently-live">
+            <span class="live-dot"></span>
+            <span class="live-label">Live</span>
+          </div>
+          <span class="about-currently-heading">Building</span>
+          <p>Form — my personal transformation iOS app</p>
+        </div>
+
+        <div class="about-currently-card">
+          <div class="about-currently-live">
+            <span class="live-dot"></span>
+            <span class="live-label">Active</span>
+          </div>
+          <span class="about-currently-heading">Learning</span>
+          <p>[What I'm currently learning]</p>
+        </div>
+
+        <div class="about-currently-card">
+          <div class="about-currently-live">
+            <span class="live-dot"></span>
+            <span class="live-label">Open</span>
+          </div>
+          <span class="about-currently-heading">Looking for</span>
+          <p>UI/UX internship or part-time role</p>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -144,47 +185,27 @@
           A few things about me that don't fit on a resume.
         </p>
       </div>
-
       <div class="about-pg-facts-grid">
-
         <div class="about-pg-fact fade-up">
           <span class="about-pg-fact-emoji">🎮</span>
           <h4>Game design nerd</h4>
-          <p>
-            I'm building Zephyraen — an open-world action RPG in Unity.
-            Game design taught me more about UX than any course.
-          </p>
+          <p>I'm building Zephyraen — an open-world action RPG in Unity. Game design taught me more about UX than any course.</p>
         </div>
-
         <div class="about-pg-fact fade-up">
           <span class="about-pg-fact-emoji">📚</span>
           <h4>Tutor on the side</h4>
-          <p>
-            I teach Primary and Secondary students in English, Maths,
-            Science, and Chinese. Explaining things simply is a skill
-            that directly feeds into how I design.
-          </p>
+          <p>I teach Primary and Secondary students in English, Maths, Science, and Chinese. Explaining things simply feeds directly into how I design.</p>
         </div>
-
         <div class="about-pg-fact fade-up">
           <span class="about-pg-fact-emoji">🍰</span>
           <h4>I make tiramisu</h4>
-          <p>
-            Cooking is my version of stepping away from the screen.
-            There's something satisfying about a process that has a
-            clear, delicious output.
-          </p>
+          <p>Cooking is my version of stepping away from the screen. There's something satisfying about a process that has a clear, delicious output.</p>
         </div>
-
         <div class="about-pg-fact fade-up">
           <span class="about-pg-fact-emoji">✈️</span>
           <h4>[Fun fact about you]</h4>
-          <p>
-            [Add something personal here — a hobby, an interest,
-            something that makes you memorable. Keep it short.]
-          </p>
+          <p>[Add something personal — a hobby, an interest, something that makes you memorable.]</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -211,10 +232,13 @@
   </footer>
 
   <script>
+    // Nav scroll
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     });
+
+    // Fade-up observer
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('visible');
@@ -222,7 +246,81 @@
       { threshold: 0.1 }
     );
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Run after GSAP loads
+    window.addEventListener('load', () => {
+      if (typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* 1. Photo wipe-reveal from centre */
+      gsap.fromTo('#aboutPhoto',
+        { clipPath: 'inset(50% 50% 50% 50% round 30px)' },
+        {
+          clipPath: 'inset(0% 0% 0% 0% round 30px)',
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#aboutPhoto',
+            start: 'top 80%',
+            once: true,
+          }
+        }
+      );
+
+      /* 2. Bio parts blur-in stagger */
+      gsap.fromTo('.about-bio-part',
+        { opacity: 0, filter: 'blur(8px)', y: 24 },
+        {
+          opacity: 1,
+          filter: 'blur(0px)',
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          stagger: 0.18,
+          scrollTrigger: {
+            trigger: '#aboutBio',
+            start: 'top 78%',
+            once: true,
+          }
+        }
+      );
+
+      /* 3. Currently cards stagger */
+      gsap.fromTo('.about-currently-card',
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          stagger: 0.12,
+          scrollTrigger: {
+            trigger: '.about-currently-grid',
+            start: 'top 85%',
+            once: true,
+          }
+        }
+      );
+
+      /* 4. Bubble parallax on scroll */
+      document.querySelectorAll('.about-bubble').forEach(bubble => {
+        const speed = parseFloat(bubble.dataset.speed) || 0.5;
+        gsap.to(bubble, {
+          yPercent: -30 * speed,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.about-pg-intro',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.5,
+          }
+        });
+      });
+
+      ScrollTrigger.refresh();
+    });
   </script>
 
+  <script src="animations.js"></script>
 </body>
 </html>

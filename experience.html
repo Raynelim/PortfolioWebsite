@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rayne Lim — Experience</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="transitions.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-  <!-- ── NAV ──────────────────────────────────────────── -->
   <nav>
     <a href="index.html" class="logo">Rayne Lim</a>
     <div class="nav-links">
@@ -31,231 +33,333 @@
     </div>
   </header>
 
-  <!-- ── TABS + CONTENT ───────────────────────────────── -->
+  <!-- ── TABS ─────────────────────────────────────────── -->
   <div class="exp-body">
-
-    <!-- Tab buttons -->
     <div class="exp-tabs">
       <button class="exp-tab exp-tab--active" data-tab="education">Education</button>
       <button class="exp-tab" data-tab="work">Work Experience</button>
     </div>
 
-    <!-- ── EDUCATION PANEL ──────────────────────────────── -->
+    <!-- ══════════════════════════════════════════════════
+         EDUCATION TAB — Smart Timeline
+    ══════════════════════════════════════════════════ -->
     <div class="exp-panel exp-panel--active" id="tab-education">
+      <div class="st-wrap" id="st-education">
 
-      <!-- ── Sub-section: Academic ── -->
-      <div class="exp-subsection">
-        <h3 class="exp-subsection-title">Academic</h3>
-
-        <div class="exp-entry exp-entry--current fade-up">
-          <div class="exp-entry-dot"></div>
-          <div class="exp-entry-body">
-            <div class="exp-entry-meta">
-              <span class="exp-date">[Start Year] — Present</span>
-              <span class="exp-badge">Current</span>
-            </div>
-            <h4 class="exp-entry-title">[Diploma Name]</h4>
-            <p class="exp-entry-org">[School / Polytechnic Name]</p>
-            <p class="exp-entry-desc">
-              [What you studied, any specialisations, relevant modules,
-              or achievements. 2–3 sentences.]
-            </p>
-            <ul class="exp-tags">
-              <li class="tag">[Module]</li>
-              <li class="tag">[Module]</li>
-              <li class="tag">[Module]</li>
-            </ul>
+        <!-- Sticky rail -->
+        <div class="st-rail">
+          <div class="st-rail-track">
+            <div class="st-rail-fill" id="st-fill-education"></div>
           </div>
+          <div class="st-rail-year" id="st-year-education">2026</div>
         </div>
 
-        <div class="exp-entry fade-up">
-          <div class="exp-entry-dot"></div>
-          <div class="exp-entry-body">
-            <div class="exp-entry-meta">
-              <span class="exp-date">[Year]</span>
+        <!-- Timeline entries -->
+        <div class="st-entries">
+
+          <!-- Sub-label -->
+          <div class="st-sublabel">Academic</div>
+
+          <!-- Entry 1 -->
+          <div class="st-entry" data-year="2024" data-color="rgba(79,70,229,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[School / Polytechnic Name]</h3>
+              <span class="st-dates">[Start Year] — Present</span>
+              <span class="st-badge">Current</span>
             </div>
-            <h4 class="exp-entry-title">[Secondary School / O-Level]</h4>
-            <p class="exp-entry-org">[School Name]</p>
-            <p class="exp-entry-desc">
-              [Results, notable achievements, or anything relevant to
-              design. 2–3 sentences.]
-            </p>
-            <ul class="exp-tags">
-              <li class="tag">[Achievement]</li>
-              <li class="tag">[Subject]</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-      <!-- end Academic -->
-
-      <!-- ── Sub-section: Volunteer ── -->
-      <div class="exp-subsection">
-        <h3 class="exp-subsection-title">Volunteer</h3>
-
-        <div class="exp-entry fade-up">
-          <div class="exp-entry-dot"></div>
-          <div class="exp-entry-body">
-            <div class="exp-entry-meta">
-              <span class="exp-date">[Month Year] — [Month Year]</span>
-              <span class="exp-badge exp-badge--soft">Volunteer</span>
+            <div class="st-entry-right">
+              <h4 class="st-role">[Diploma Name]</h4>
+              <p class="st-summary">
+                [What you studied and your specialisation. One sentence on what you're most proud of academically.]
+                [Second sentence on relevant modules or achievements.]
+              </p>
+              <!-- Accordion -->
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Highlights <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>GPA: <span class="st-metric-tag">[X.X / 4.0]</span></li>
+                  <li>Relevant modules: <span class="st-metric-tag">[Module 1]</span> <span class="st-metric-tag">[Module 2]</span></li>
+                  <li>Achievement: <span class="st-metric-tag">[Award or recognition]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Module]</li>
+                <li class="tag">[Module]</li>
+                <li class="tag">[Module]</li>
+              </ul>
             </div>
-            <h4 class="exp-entry-title">[Role / Position]</h4>
-            <p class="exp-entry-org">[Organisation / Event Name]</p>
-            <p class="exp-entry-desc">
-              [What you did, who you helped, and what you contributed.
-              2–3 sentences.]
-            </p>
-            <ul class="exp-tags">
-              <li class="tag">[Skill]</li>
-              <li class="tag">[Skill]</li>
-            </ul>
           </div>
-        </div>
 
-        <div class="exp-entry fade-up">
-          <div class="exp-entry-dot"></div>
-          <div class="exp-entry-body">
-            <div class="exp-entry-meta">
-              <span class="exp-date">[Month Year] — [Month Year]</span>
-              <span class="exp-badge exp-badge--soft">Volunteer</span>
+          <!-- Entry 2 -->
+          <div class="st-entry" data-year="2022" data-color="rgba(13,148,136,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[Secondary School Name]</h3>
+              <span class="st-dates">[Year]</span>
             </div>
-            <h4 class="exp-entry-title">[Role / Position]</h4>
-            <p class="exp-entry-org">[Organisation / Event Name]</p>
-            <p class="exp-entry-desc">
-              [What you did, who you helped, and what you contributed.
-              2–3 sentences.]
-            </p>
-            <ul class="exp-tags">
-              <li class="tag">[Skill]</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-      <!-- end Volunteer -->
-
-      <!-- ── Sub-section: School Events ── -->
-      <div class="exp-subsection">
-        <h3 class="exp-subsection-title">School Events</h3>
-
-        <div class="exp-entry fade-up">
-          <div class="exp-entry-dot"></div>
-          <div class="exp-entry-body">
-            <div class="exp-entry-meta">
-              <span class="exp-date">[Year]</span>
-              <span class="exp-badge exp-badge--soft">Event</span>
+            <div class="st-entry-right">
+              <h4 class="st-role">[O-Level / Secondary School]</h4>
+              <p class="st-summary">
+                [Results and what you were known for academically or co-curricular.]
+                [Any awards, leadership roles, or standout moments.]
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Highlights <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>O-Level results: <span class="st-metric-tag">[L1R5: XX]</span></li>
+                  <li>CCA: <span class="st-metric-tag">[CCA Name]</span></li>
+                  <li>Achievement: <span class="st-metric-tag">[Any awards]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Achievement]</li>
+                <li class="tag">[Subject]</li>
+              </ul>
             </div>
-            <h4 class="exp-entry-title">[Event / Project Name]</h4>
-            <p class="exp-entry-org">[School / Organiser]</p>
-            <p class="exp-entry-desc">
-              [Your role in the event, what you did, and what the
-              outcome was. 2–3 sentences.]
-            </p>
-            <ul class="exp-tags">
-              <li class="tag">[Skill]</li>
-              <li class="tag">[Skill]</li>
-            </ul>
           </div>
-        </div>
 
-        <div class="exp-entry fade-up">
-          <div class="exp-entry-dot"></div>
-          <div class="exp-entry-body">
-            <div class="exp-entry-meta">
-              <span class="exp-date">[Year]</span>
-              <span class="exp-badge exp-badge--soft">Event</span>
+          <!-- Sub-label -->
+          <div class="st-sublabel">Volunteer</div>
+
+          <!-- Entry 3 -->
+          <div class="st-entry" data-year="2024" data-color="rgba(34,197,94,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[Organisation Name]</h3>
+              <span class="st-dates">[Month Year] — [Month Year]</span>
+              <span class="st-badge st-badge--soft">Volunteer</span>
             </div>
-            <h4 class="exp-entry-title">[Event / Competition Name]</h4>
-            <p class="exp-entry-org">[School / Organiser]</p>
-            <p class="exp-entry-desc">
-              [Your role in the event, what you did, and what the
-              outcome was. 2–3 sentences.]
-            </p>
-            <ul class="exp-tags">
-              <li class="tag">[Skill]</li>
-            </ul>
+            <div class="st-entry-right">
+              <h4 class="st-role">[Role / Position]</h4>
+              <p class="st-summary">
+                [What you did and who you helped.]
+                [What you contributed or organised.]
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Highlights <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>Reached: <span class="st-metric-tag">[X people helped]</span></li>
+                  <li>Impact: <span class="st-metric-tag">[One-line outcome]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Skill]</li>
+                <li class="tag">[Skill]</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-      </div>
-      <!-- end School Events -->
+          <!-- Entry 4 -->
+          <div class="st-entry" data-year="2023" data-color="rgba(255,77,61,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[Organisation Name]</h3>
+              <span class="st-dates">[Month Year] — [Month Year]</span>
+              <span class="st-badge st-badge--soft">Volunteer</span>
+            </div>
+            <div class="st-entry-right">
+              <h4 class="st-role">[Role / Position]</h4>
+              <p class="st-summary">
+                [What you did and who you helped.]
+                [What you contributed or organised.]
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Highlights <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>Impact: <span class="st-metric-tag">[One-line outcome]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Skill]</li>
+              </ul>
+            </div>
+          </div>
 
-    </div>
-    <!-- end #tab-education -->
+          <!-- Sub-label -->
+          <div class="st-sublabel">School Events</div>
 
-    <!-- ── WORK PANEL ───────────────────────────────────── -->
+          <!-- Entry 5 -->
+          <div class="st-entry" data-year="2025" data-color="rgba(79,70,229,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[School / Organiser]</h3>
+              <span class="st-dates">[Year]</span>
+              <span class="st-badge st-badge--soft">Event</span>
+            </div>
+            <div class="st-entry-right">
+              <h4 class="st-role">[Event / Project Name]</h4>
+              <p class="st-summary">
+                [Your role in the event and what you did.]
+                [Outcome or what was achieved.]
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Highlights <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>Scale: <span class="st-metric-tag">[X attendees / X teams]</span></li>
+                  <li>Outcome: <span class="st-metric-tag">[Result]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Skill]</li>
+                <li class="tag">[Skill]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Entry 6 -->
+          <div class="st-entry" data-year="2024" data-color="rgba(13,148,136,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[School / Organiser]</h3>
+              <span class="st-dates">[Year]</span>
+              <span class="st-badge st-badge--soft">Event</span>
+            </div>
+            <div class="st-entry-right">
+              <h4 class="st-role">[Event / Competition Name]</h4>
+              <p class="st-summary">
+                [Your role in the event and what you did.]
+                [Outcome or what was achieved.]
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Highlights <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>Result: <span class="st-metric-tag">[Placement or outcome]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Skill]</li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- end .st-entries -->
+      </div><!-- end .st-wrap -->
+    </div><!-- end #tab-education -->
+
+    <!-- ══════════════════════════════════════════════════
+         WORK TAB — Smart Timeline
+    ══════════════════════════════════════════════════ -->
     <div class="exp-panel" id="tab-work">
+      <div class="st-wrap" id="st-work">
 
-      <div class="exp-entry exp-entry--current fade-up">
-        <div class="exp-entry-dot"></div>
-        <div class="exp-entry-body">
-          <div class="exp-entry-meta">
-            <span class="exp-date">[Month Year] — Present</span>
-            <span class="exp-badge">Current</span>
+        <div class="st-rail">
+          <div class="st-rail-track">
+            <div class="st-rail-fill" id="st-fill-work"></div>
           </div>
-          <h4 class="exp-entry-title">[Job Title / Role]</h4>
-          <p class="exp-entry-org">[Company Name]</p>
-          <p class="exp-entry-desc">
-            [What you did — outcome-focused. What did you design, build,
-            or improve? Who did you work with? 2–3 sentences.]
-          </p>
-          <ul class="exp-tags">
-            <li class="tag">[Tool]</li>
-            <li class="tag">[Tool]</li>
-            <li class="tag">[Skill]</li>
-          </ul>
+          <div class="st-rail-year" id="st-year-work">2026</div>
+        </div>
+
+        <div class="st-entries">
+
+          <!-- Entry 1 — current -->
+          <div class="st-entry st-entry--current" data-year="2025" data-color="rgba(255,77,61,0.05)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[Company Name]</h3>
+              <span class="st-dates">[Month Year] — Present</span>
+              <span class="st-badge">Current</span>
+            </div>
+            <div class="st-entry-right">
+              <h4 class="st-role">[Job Title / Role]</h4>
+              <p class="st-summary">
+                [What you designed or built — be outcome-focused.]
+                [Who you worked with and what impact it had.]
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Impact <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>Improved: <span class="st-metric-tag">[Metric — e.g. reduced friction by 15%]</span></li>
+                  <li>Delivered: <span class="st-metric-tag">[X screens / features]</span></li>
+                  <li>Stack: <span class="st-metric-tag">[Tool]</span> <span class="st-metric-tag">[Tool]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Tool]</li>
+                <li class="tag">[Tool]</li>
+                <li class="tag">[Skill]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Entry 2 -->
+          <div class="st-entry" data-year="2024" data-color="rgba(79,70,229,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">[Logo]</div>
+              <h3 class="st-company">[Company Name]</h3>
+              <span class="st-dates">[Month Year] — [Month Year]</span>
+            </div>
+            <div class="st-entry-right">
+              <h4 class="st-role">[Job Title / Role]</h4>
+              <p class="st-summary">
+                [What you designed or built — be outcome-focused.]
+                [Who you worked with and what impact it had.]
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Impact <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>Delivered: <span class="st-metric-tag">[X screens / features]</span></li>
+                  <li>Stack: <span class="st-metric-tag">[Tool]</span> <span class="st-metric-tag">[Tool]</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">[Tool]</li>
+                <li class="tag">[Skill]</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Entry 3 — Tutor -->
+          <div class="st-entry" data-year="2023" data-color="rgba(34,197,94,0.04)">
+            <div class="st-entry-left">
+              <div class="st-logo-placeholder">📚</div>
+              <h3 class="st-company">Self-employed</h3>
+              <span class="st-dates">[Month Year] — [Month Year]</span>
+              <span class="st-badge st-badge--soft">Freelance</span>
+            </div>
+            <div class="st-entry-right">
+              <h4 class="st-role">Private Tutor</h4>
+              <p class="st-summary">
+                Tutored Primary and Secondary students in English, Maths, Science, and Chinese.
+                Teaching complex ideas simply sharpened how I think about clarity in UX.
+              </p>
+              <button class="st-accordion-btn" aria-expanded="false">
+                Key Impact <span class="st-accordion-icon">+</span>
+              </button>
+              <div class="st-accordion-body">
+                <ul class="st-metrics">
+                  <li>Subjects: <span class="st-metric-tag">English</span> <span class="st-metric-tag">Maths</span> <span class="st-metric-tag">Science</span> <span class="st-metric-tag">Chinese</span></li>
+                  <li>Levels: <span class="st-metric-tag">Primary</span> <span class="st-metric-tag">Secondary</span> <span class="st-metric-tag">PSLE</span></li>
+                </ul>
+              </div>
+              <ul class="exp-tags">
+                <li class="tag">Communication</li>
+                <li class="tag">Curriculum Design</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
+    </div><!-- end #tab-work -->
 
-      <div class="exp-entry fade-up">
-        <div class="exp-entry-dot"></div>
-        <div class="exp-entry-body">
-          <div class="exp-entry-meta">
-            <span class="exp-date">[Month Year] — [Month Year]</span>
-          </div>
-          <h4 class="exp-entry-title">[Job Title / Role]</h4>
-          <p class="exp-entry-org">[Company Name]</p>
-          <p class="exp-entry-desc">
-            [What you did — outcome-focused. What did you design, build,
-            or improve? Who did you work with? 2–3 sentences.]
-          </p>
-          <ul class="exp-tags">
-            <li class="tag">[Tool]</li>
-            <li class="tag">[Skill]</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="exp-entry fade-up">
-        <div class="exp-entry-dot"></div>
-        <div class="exp-entry-body">
-          <div class="exp-entry-meta">
-            <span class="exp-date">[Month Year] — [Month Year]</span>
-            <span class="exp-badge exp-badge--soft">Freelance</span>
-          </div>
-          <h4 class="exp-entry-title">Private Tutor</h4>
-          <p class="exp-entry-org">Self-employed</p>
-          <p class="exp-entry-desc">
-            Tutored Primary and Secondary students in English, Maths,
-            Science, and Chinese. Teaching complex ideas simply sharpened
-            how I think about clarity in UX.
-          </p>
-          <ul class="exp-tags">
-            <li class="tag">English</li>
-            <li class="tag">Maths</li>
-            <li class="tag">Science</li>
-            <li class="tag">Chinese</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-    <!-- end #tab-work -->
-
-  </div>
-  <!-- end .exp-body -->
+  </div><!-- end .exp-body -->
 
   <!-- ── CTA ───────────────────────────────────────────── -->
   <section class="exp-cta">
@@ -272,23 +376,19 @@
     </div>
   </section>
 
-  <!-- ── FOOTER ────────────────────────────────────────── -->
   <footer class="footer">
     <span>© 2026 Rayne Lim</span>
     <span>Designed &amp; built by me</span>
   </footer>
 
   <script>
-    // Nav scroll shadow
+    // Nav
     const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
 
-    // Tab switching
-    const tabs = document.querySelectorAll('.exp-tab');
+    // ── Tab switching ──────────────────────────────────
+    const tabs   = document.querySelectorAll('.exp-tab');
     const panels = document.querySelectorAll('.exp-panel');
-
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const target = tab.dataset.tab;
@@ -296,18 +396,129 @@
         panels.forEach(p => p.classList.remove('exp-panel--active'));
         tab.classList.add('exp-tab--active');
         document.getElementById('tab-' + target).classList.add('exp-panel--active');
+        // Re-init timeline for the active panel
+        if (typeof initTimeline === 'function') initTimeline();
       });
     });
 
-    // Fade-up on scroll
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('visible');
-      }),
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    // ── Accordion ─────────────────────────────────────
+    document.querySelectorAll('.st-accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body     = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        btn.querySelector('.st-accordion-icon').textContent = expanded ? '+' : '−';
+        if (expanded) {
+          body.style.maxHeight = '0';
+          body.style.opacity   = '0';
+        } else {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          body.style.opacity   = '1';
+        }
+      });
+    });
+
+    // ── Smart Timeline ─────────────────────────────────
+    window.addEventListener('load', () => {
+      if (typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      function initTimeline() {
+        // Find active panel
+        const activePanel = document.querySelector('.exp-panel--active');
+        if (!activePanel) return;
+
+        const wrap    = activePanel.querySelector('.st-wrap');
+        const fill    = activePanel.querySelector('.st-rail-fill');
+        const yearEl  = activePanel.querySelector('.st-rail-year');
+        const entries = activePanel.querySelectorAll('.st-entry');
+        const section = activePanel.querySelector('.st-entries');
+        if (!wrap || !entries.length) return;
+
+        // Kill existing ScrollTriggers to avoid duplicates
+        ScrollTrigger.getAll().forEach(t => t.kill());
+
+        // 1. Rail progress fill
+        gsap.to(fill, {
+          scaleY: 1,
+          ease: 'none',
+          transformOrigin: 'top center',
+          scrollTrigger: {
+            trigger: wrap,
+            start: 'top 80%',
+            end: 'bottom 80%',
+            scrub: 1,
+          }
+        });
+
+        // 2. Year bubble + focus state per card
+        entries.forEach(entry => {
+          const year  = entry.dataset.year || '2024';
+          const color = entry.dataset.color || 'rgba(0,0,0,0)';
+
+          ScrollTrigger.create({
+            trigger: entry,
+            start: 'top 55%',
+            end: 'bottom 45%',
+            onEnter: () => {
+              // Update year
+              yearEl.textContent = year;
+              // Focus: scale + opacity
+              entry.classList.add('st-entry--active');
+              // Section bg zone shift
+              section.style.background = color;
+              section.style.transition = 'background 0.6s ease';
+            },
+            onLeave: () => {
+              entry.classList.remove('st-entry--active');
+              section.style.background = '';
+            },
+            onEnterBack: () => {
+              yearEl.textContent = year;
+              entry.classList.add('st-entry--active');
+              section.style.background = color;
+            },
+            onLeaveBack: () => {
+              entry.classList.remove('st-entry--active');
+              section.style.background = '';
+            },
+          });
+
+          // 3. Initial entrance animation
+          gsap.fromTo(entry,
+            { opacity: 0, y: 32 },
+            {
+              opacity: 0.6,
+              y: 0,
+              duration: 0.6,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: entry,
+                start: 'top 85%',
+                once: true,
+              }
+            }
+          );
+
+          // 4. Hover zone shift background
+          entry.addEventListener('mouseenter', () => {
+            section.style.background = entry.dataset.color || '';
+          });
+          entry.addEventListener('mouseleave', () => {
+            if (!entry.classList.contains('st-entry--active')) {
+              section.style.background = '';
+            }
+          });
+        });
+
+        ScrollTrigger.refresh();
+      }
+
+      initTimeline();
+      window.initTimeline = initTimeline;
+    });
   </script>
 
+  <script src="animations.js"></script>
 </body>
 </html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rayne Lim — Project 1</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="transitions.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────── -->
+  <nav>
+    <a href="index.html" class="logo">Rayne Lim</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="resume.pdf" class="nav-resume" target="_blank">Resume ↗</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────── -->
+  <!-- Full-width header: tag + title + summary, then wide image below -->
+  <header class="cs-hero">
+    <div class="cs-hero-top">
+      <a href="index.html#work" class="cs-back">← All Projects</a>
+      <div class="cs-hero-text">
+        <div class="cs-hero-tags">
+          <span class="tag">[UI/UX]</span>
+          <span class="tag">[Mobile]</span>
+          <span class="tag">[Research]</span>
+        </div>
+        <h1>Project 1</h1>
+        <p class="cs-hero-desc">
+          [One sentence that captures what this project is and who it's for.
+          Be specific — this is the first thing a recruiter reads.]
+        </p>
+      </div>
+      <!-- Quick-glance metadata strip -->
+      <div class="cs-meta-strip">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">My Role</span>
+          <span class="cs-meta-value">[UI/UX Designer &amp; Developer]</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-value">[e.g. 3 months]</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Tools</span>
+          <span class="cs-meta-value">[Figma, React Native]</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Platform</span>
+          <span class="cs-meta-value">[iOS / Web]</span>
+        </div>
+      </div>
+    </div>
+    <!-- Hero image — full width, tall -->
+    <div class="cs-hero-img cs-clr-1"></div>
+  </header>
+
+  <!-- ── 00 OVERVIEW ──────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <span class="cs-step">00</span>
+        <span class="cs-step-name">Overview</span>
+      </div>
+      <div class="cs-body">
+        <h2>What is <em>Project 1?</em></h2>
+        <p>
+          [2–3 sentences describing what the project is, who it's for, and
+          why it exists. Avoid jargon — write like you're explaining it to
+          someone who's never heard of it.]
+        </p>
+        <!-- 3 stat highlights -->
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <span class="cs-stat-num">[X]</span>
+            <span class="cs-stat-label">[Screens designed]</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">[X]</span>
+            <span class="cs-stat-label">[User interviews]</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">[X]</span>
+            <span class="cs-stat-label">[Weeks to ship]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 01 PROBLEM ───────────────────────────────────── -->
+  <section class="cs-section cs-section--tint">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <span class="cs-step">01</span>
+        <span class="cs-step-name">Problem</span>
+      </div>
+      <div class="cs-body">
+        <h2>What problem <em>am I solving?</em></h2>
+        <p>
+          [Describe the core problem. Who is affected and what is the pain
+          point? The best problem statements are specific.]
+        </p>
+        <blockquote class="cs-callout">
+          "[Write your problem statement as a single clear sentence here.]"
+        </blockquote>
+        <p>
+          [Follow-up context — what makes this worth solving? Any data,
+          observations, or personal motivation behind it?]
+        </p>
+        <div class="cs-block cs-clr-2">
+          <span>Problem space / user journey map</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02 RESEARCH ──────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <span class="cs-step">02</span>
+        <span class="cs-step-name">Research</span>
+      </div>
+      <div class="cs-body">
+        <h2>What did <em>I find out?</em></h2>
+        <p>
+          [How did you research this problem? Summarise your methods briefly,
+          then focus on what you learned.]
+        </p>
+        <!-- Method cards -->
+        <div class="cs-methods">
+          <div class="cs-method">
+            <span class="cs-method-icon">🗣️</span>
+            <h4>[User Interviews]</h4>
+            <p>[X] participants — [one-line finding]</p>
+          </div>
+          <div class="cs-method">
+            <span class="cs-method-icon">📊</span>
+            <h4>[Survey]</h4>
+            <p>[X] responses — [one-line finding]</p>
+          </div>
+          <div class="cs-method">
+            <span class="cs-method-icon">🔍</span>
+            <h4>[Competitor Analysis]</h4>
+            <p>[X] apps — [one-line finding]</p>
+          </div>
+        </div>
+        <!-- Insights -->
+        <h3 class="cs-subhead">Key Insights</h3>
+        <div class="cs-insights">
+          <div class="cs-insight">
+            <span class="cs-insight-n">01</span>
+            <div>
+              <strong>[Insight title]</strong>
+              <p>[1–2 sentences explaining what you found and why it matters.]</p>
+            </div>
+          </div>
+          <div class="cs-insight">
+            <span class="cs-insight-n">02</span>
+            <div>
+              <strong>[Insight title]</strong>
+              <p>[1–2 sentences explaining what you found and why it matters.]</p>
+            </div>
+          </div>
+          <div class="cs-insight">
+            <span class="cs-insight-n">03</span>
+            <div>
+              <strong>[Insight title]</strong>
+              <p>[1–2 sentences explaining what you found and why it matters.]</p>
+            </div>
+          </div>
+        </div>
+        <div class="cs-block cs-clr-3">
+          <span>Affinity map / persona / research board</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 DESIGN ────────────────────────────────────── -->
+  <section class="cs-section cs-section--tint">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <span class="cs-step">03</span>
+        <span class="cs-step-name">Design</span>
+      </div>
+      <div class="cs-body">
+        <h2>How did <em>I design it?</em></h2>
+        <p>
+          [Walk through your design process — ideation, wireframes, visual
+          design. What decisions did you make and why?]
+        </p>
+        <!-- Two-col image blocks -->
+        <div class="cs-row">
+          <div class="cs-block cs-clr-1">
+            <span>Wireframes / lo-fi sketches</span>
+          </div>
+          <div class="cs-block cs-clr-2">
+            <span>Visual design exploration</span>
+          </div>
+        </div>
+        <h3 class="cs-subhead">Design Decisions</h3>
+        <p>
+          [Explain 2–3 key design choices. Why this layout? This colour?
+          This interaction? Link decisions back to your research insights.]
+        </p>
+        <div class="cs-block cs-block--tall cs-clr-3">
+          <span>Final UI screens / design system</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 PROTOTYPE ─────────────────────────────────── -->
+  <section class="cs-section">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <span class="cs-step">04</span>
+        <span class="cs-step-name">Prototype</span>
+      </div>
+      <div class="cs-body">
+        <h2>How does <em>it work?</em></h2>
+        <p>
+          [Describe what you built and tested. What fidelity? Did you run
+          usability testing? What changed as a result?]
+        </p>
+        <div class="cs-block cs-block--tall cs-clr-1">
+          <span>Prototype walkthrough / key user flow</span>
+          <!--
+            To embed a Figma prototype, replace this block with:
+            <iframe style="border:none;width:100%;height:500px"
+              src="YOUR_FIGMA_EMBED_URL" allowfullscreen></iframe>
+          -->
+        </div>
+        <h3 class="cs-subhead">Before &amp; After Testing</h3>
+        <div class="cs-ba">
+          <div class="cs-ba-col">
+            <span class="cs-ba-tag">Before</span>
+            <div class="cs-block cs-clr-2">
+              <span>Before iteration</span>
+            </div>
+            <p>[What the issue was and what users said.]</p>
+          </div>
+          <div class="cs-ba-col">
+            <span class="cs-ba-tag cs-ba-tag--after">After</span>
+            <div class="cs-block cs-clr-3">
+              <span>After iteration</span>
+            </div>
+            <p>[What you changed and why it's better.]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 OUTCOME ───────────────────────────────────── -->
+  <section class="cs-section cs-section--tint">
+    <div class="cs-section-inner">
+      <div class="cs-label-col">
+        <span class="cs-step">05</span>
+        <span class="cs-step-name">Outcome</span>
+      </div>
+      <div class="cs-body">
+        <h2>What did <em>I achieve?</em></h2>
+        <p>
+          [What was the result? Use metrics if you have them. If not, describe
+          the qualitative outcome — what shipped, what improved, what you're
+          proud of.]
+        </p>
+        <div class="cs-stats">
+          <div class="cs-stat">
+            <span class="cs-stat-num">[X%]</span>
+            <span class="cs-stat-label">[Task success rate]</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">[X]</span>
+            <span class="cs-stat-label">[Screens shipped]</span>
+          </div>
+          <div class="cs-stat">
+            <span class="cs-stat-num">[X]</span>
+            <span class="cs-stat-label">[User testers]</span>
+          </div>
+        </div>
+        <h3 class="cs-subhead">What I'd do differently</h3>
+        <p>
+          [Honest reflection — what would you change with more time?
+          This shows maturity, which recruiters appreciate.]
+        </p>
+        <h3 class="cs-subhead">What I learned</h3>
+        <p>
+          [Key takeaways from this project — about design, process,
+          or yourself as a designer.]
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEXT PROJECT ──────────────────────────────────── -->
+  <section class="cs-next">
+    <div class="cs-next-inner">
+      <span class="section-label">Next Project</span>
+      <h2>Project 2</h2>
+      <p>[One line description of project 2.]</p>
+      <a href="project-02.html" class="btn-primary">View Case Study →</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <span>© 2026 Rayne Lim</span>
+    <span>Designed &amp; built by me</span>
+  </footer>
+
+
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.cs-section, .cs-method, .cs-stat, .cs-insight').forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+  </script>
+
+  <script src="animations.js"></script>
+</body>
+</html>
